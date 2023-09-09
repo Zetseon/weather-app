@@ -1,0 +1,12 @@
+
+.displayHourlyContainer{
+	border-radius: 20px;
+	border: 1px black solid;
+	padding: 15px;
+}
+.tempContainer{
+	display: inline-flex;
+}
+.temp{
+	margin: 10px
+}
