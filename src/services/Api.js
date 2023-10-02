@@ -19,12 +19,25 @@ function FetchApi({ filterData, handleCurrentWeatherData, handleForecastWeatherD
 				console.log(res.data)
 			})
 	}
-	return (
-		<div>
 
-			<button onClick={fetchCurrentWeather} className="btn btn-primary">Button</button>
-		</div>
-	)
+}
+
+export const fetchWeatherData = async (filterData, handleCurrentWeatherData, handleForecastWeatherData, lat, lon) => {
+	const temperature = filterData.temperature === 'imperial' ? 'imperial' : 'metric';
+	console.log(temperature)
+	const key = '1d5302b5721aa692cbcf84acb68e373f'
+	const baseURL = `https://api.openweathermap.org/data/2.5/`
+	const currentWeatherParams = `weather?lat=${lat}&lon=${lon}&units=${filterData.temperature}&appid=${key}`
+	const threeHourForecastParams = `forecast?lat=${lat}&lon=${lon}&units=${filterData.temperature}&appid=${key}`
+	axios.get(baseURL + currentWeatherParams)
+			.then(res => {
+				handleCurrentWeatherData(res.data);
+			})
+		axios.get(baseURL + threeHourForecastParams)
+			.then(res => {
+				handleForecastWeatherData(res.data)
+			})
+
 }
 
 export default FetchApi;

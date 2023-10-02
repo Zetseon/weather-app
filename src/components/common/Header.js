@@ -4,8 +4,8 @@ function Header() {
 
 
 	return (
-		<nav className="navbar navbar-expand-md navbar-light bg-*">
-			<div className="container">
+		<nav className="navbar navbar-expand-md navbar-light bg-* pe-5">
+			<div className="container-fluid">
 				<a className="navbar-brand" href="#">
 					<img src={logo} alt="Logo" width="50px" height="50px" />
 				</a>
