@@ -1,7 +1,6 @@
 import React from "react";
 import DisplayHourly from "./DisplayHourly";
-import rain from '../../assests/rain.gif'
-import drizzle from '../../assests/drizzle-one.gif'
+
 function Display({ currentWeatherData, tempUnit }) {
   
   const main = currentWeatherData.main
